@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAROU SERVICES | Structure métallique à Niamey</title>
+    <meta name="description"
+        content="GAROU SERVICES STRUCTURE MÉTALLIQUE accompagne vos projets de conception, fabrication et montage de structures métalliques à Niamey, Niger.">
+    <meta property="og:title" content="GAROU SERVICES | Structure métallique à Niamey">
+    <meta property="og:description"
+        content="Conception, fabrication et montage de structures métalliques à Niamey, Niger.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#171717">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Couleurs de la charte (issues de la carte de visite)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: "#1F3B68",
+                        sky: "#8FB1E8",
+                        ink: "#171717",
+                        graphite: "#252525",
+                        paper: "#F4F4F4"
+                    }
+                }
+            }
+        };
+    </script>
+    <!-- icon -->
+    <link id="favicon" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Icons (Remix Icon) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="site-header" class="on-dark fixed top-0 inset-x-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-5 h-[72px] flex items-center justify-between text-white">
+            <a href="#accueil" class="flex items-center gap-3" aria-label="GAROU SERVICES - accueil">
+                <!-- <svg class="w-9 h-7 text-white">
+                    <use href="#logo" />
+                </svg> -->
+                <img data-image="logo" class="w-24 h-24 object-contain rounded-md">
+                <span class="leading-none"><span class="font-display block text-xl font-bold tracking-wider">GAROU
+                        SERVICES</span><span class="block text-[11px] tracking-[.25em] text-brand uppercase">Structure
+                        Métallique</span></span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-9 text-sm font-medium uppercase tracking-wider"
+                aria-label="Navigation principale">
+                <a class="nav-link" href="#accueil">Accueil</a><a class="nav-link" href="#apropos">À propos</a><a
+                    class="nav-link" href="#services">Services</a><a class="nav-link"
+                    href="#realisations">Réalisations</a><a class="nav-link" href="#contact">Contact</a>
+            </nav>
+            <a href="#contact" class="btn btn-accent !py-3 hidden lg:inline-flex">Demander un devis</a>
+            <button id="burger" class="lg:hidden p-2" aria-label="Ouvrir le menu" aria-expanded="false"
+                aria-controls="menu"><i class="ri-menu-line  text-3xl" aria-hidden="true"></i></button>
+        </div>
+    </header>
+    <div id="menu" class="on-dark fixed inset-0 z-[60] bg-ink text-white flex flex-col justify-center px-8"
+        aria-hidden="true">
+        <button id="menu-close" class="absolute top-5 right-5 p-2" aria-label="Fermer le menu"><i
+                class="ri-close-line  text-3xl" aria-hidden="true"></i></button>
+        <nav class="flex flex-col gap-5 font-display text-5xl font-bold" aria-label="Menu mobile">
+            <a href="#accueil" class="menu-link">Accueil</a><a href="#apropos" class="menu-link">À propos</a><a
+                href="#services" class="menu-link">Services</a><a href="#realisations"
+                class="menu-link">Réalisations</a><a href="#contact" class="menu-link">Contact</a>
+        </nav>
+        <a href="#contact" class="menu-link btn btn-accent mt-10 justify-center">Demander un devis</a>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section id="accueil" class="on-dark relative min-h-screen flex items-end bg-ink text-white overflow-hidden">
+            <img data-image="hero" class="absolute inset-0 w-full h-full object-cover">
+            <!-- Vidéo d'ambiance : se règle avec HERO_VIDEO dans data.js (retirée si vide) -->
+            <video id="hero-video" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline autoplay
+                preload="metadata" aria-hidden="true"></video>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30"></div>
+            <div class="relative max-w-7xl mx-auto px-5 pb-28 pt-40 w-full">
+                <p class="text-brand font-semibold tracking-[.3em] text-sm mb-5">CONCEPTION • FABRICATION • MONTAGE</p>
+                <h1 class="text-6xl sm:text-7xl lg:text-[8.5rem] font-bold max-w-5xl">Des structures métalliques conçues
+                    pour durer.</h1>
+                <p class="mt-7 max-w-xl text-lg text-white/80">GAROU SERVICES vous accompagne dans vos projets de
+                    construction métallique, de la conception à la réalisation, avec des solutions adaptées à vos
+                    besoins.</p>
+                <div class="mt-9 flex flex-wrap gap-4"><a href="#contact" class="btn btn-accent">Demander un devis</a><a
+                        href="#realisations" class="btn btn-outline">Voir nos réalisations</a></div>
+            </div>
+            <a href="#apropos"
+                class="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-xs tracking-widest uppercase text-white/70 hover:text-brand"><i
+                    class="ri-arrow-down-line mx-auto mb-1 text-xl" aria-hidden="true"></i>Découvrir GAROU SERVICES</a>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="apropos" class="py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal pb-16 pr-10 lg:pr-0">
+                    <div class="aspect-[4/5] overflow-hidden img-zoom">
+                        <img data-image="aboutMain" loading="lazy" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 w-1/2 aspect-square overflow-hidden border-8 border-white img-zoom">
+                        <img data-image="aboutDetail" loading="lazy" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="reveal">
+                    <p class="text-brand font-semibold tracking-[.25em] text-sm mb-4">NOTRE SAVOIR-FAIRE</p>
+                    <h2 class="text-6xl lg:text-7xl font-bold">Construire.<br>Fabriquer.<br>Assembler.</h2>
+                    <p class="mt-6 text-lg text-neutral-700 max-w-xl">GAROU SERVICES STRUCTURE MÉTALLIQUE intervient
+                        dans le domaine de la construction métallique. Nous accompagnons les projets de conception, de
+                        fabrication et de montage de structures métalliques en tenant compte des besoins spécifiques de
+                        chaque client.</p>
+                    <div class="mt-10 grid grid-cols-3 gap-4">
+                        <div class="border-t-2 border-brand pt-4"><i class="ri-ruler-2-line text-brand mb-3 text-2xl"
+                                aria-hidden="true"></i><span
+                                class="font-display text-2xl font-bold block">01</span>Conception</div>
+                        <div class="border-t-2 border-brand pt-4"><i class="ri-fire-line text-brand mb-3 text-2xl"
+                                aria-hidden="true"></i><span
+                                class="font-display text-2xl font-bold block">02</span>Fabrication</div>
+                        <div class="border-t-2 border-brand pt-4"><i class="ri-hammer-line text-brand mb-3 text-2xl"
+                                aria-hidden="true"></i><span
+                                class="font-display text-2xl font-bold block">03</span>Montage</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="on-dark bg-[#1F3B68] text-white py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-5">
+                <h2 class="text-5xl lg:text-7xl font-bold max-w-3xl reveal">Des solutions métalliques adaptées à vos
+                    projets.</h2>
+                <div id="services-list" class="mt-16 divide-y divide-white/15 border-y border-white/15"></div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section id="processus" class="py-24 lg:py-32 bg-paper">
+            <div class="max-w-7xl mx-auto px-5">
+                <p class="text-brand font-semibold tracking-[.25em] text-sm mb-4">NOTRE PROCESSUS</p>
+                <h2 class="text-5xl lg:text-7xl font-bold max-w-3xl">Comment nous accompagnons votre projet.</h2>
+                <ol class="mt-16 grid md:grid-cols-4 gap-10 md:gap-6 relative">
+                    <li class="reveal border-l-4 md:border-l-0 md:border-t-4 border-brand pl-6 md:pl-0 md:pt-6"><span
+                            class="font-display text-6xl text-brand font-bold">01</span>
+                        <h3 class="text-2xl font-bold mt-2">Échange</h3>
+                        <p class="mt-2 text-neutral-700">Comprendre le besoin du client.</p>
+                    </li>
+                    <li class="reveal border-l-4 md:border-l-0 md:border-t-4 border-brand pl-6 md:pl-0 md:pt-6"><span
+                            class="font-display text-6xl text-brand font-bold">02</span>
+                        <h3 class="text-2xl font-bold mt-2">Conception</h3>
+                        <p class="mt-2 text-neutral-700">Étudier et préparer la solution adaptée.</p>
+                    </li>
+                    <li class="reveal border-l-4 md:border-l-0 md:border-t-4 border-brand pl-6 md:pl-0 md:pt-6"><span
+                            class="font-display text-6xl text-brand font-bold">03</span>
+                        <h3 class="text-2xl font-bold mt-2">Fabrication</h3>
+                        <p class="mt-2 text-neutral-700">Préparer les éléments métalliques nécessaires.</p>
+                    </li>
+                    <li class="reveal border-l-4 md:border-l-0 md:border-t-4 border-brand pl-6 md:pl-0 md:pt-6"><span
+                            class="font-display text-6xl text-brand font-bold">04</span>
+                        <h3 class="text-2xl font-bold mt-2">Montage</h3>
+                        <p class="mt-2 text-neutral-700">Assembler et installer la structure sur site.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- REALISATIONS -->
+        <section id="realisations" class="py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-5">
+                <h2 class="text-6xl lg:text-8xl font-bold reveal">Nos réalisations</h2>
+                <p class="mt-4 text-lg text-neutral-600">Découvrez quelques exemples de structures et constructions
+                    métalliques.</p>
+                <div id="filters" class="mt-10 flex flex-wrap gap-2" role="group" aria-label="Filtrer les réalisations">
+                </div>
+                <div id="grid"
+                    class="mt-8 grid grid-cols-2 lg:grid-cols-4 auto-rows-[160px] sm:auto-rows-[220px] gap-3 lg:gap-4 grid-flow-dense">
+                </div>
+            </div>
+        </section>
+
+        <!-- IMMERSIVE CTA -->
+        <section class="on-dark relative py-40 bg-ink text-white text-center overflow-hidden">
+            <img data-image="field" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-ink/65">
+            </div>
+            <div class="relative px-5">
+                <h2 class="text-5xl lg:text-8xl font-bold max-w-4xl mx-auto">Des projets pensés pour le terrain</h2>
+                <p class="mt-5 text-brand tracking-[.3em] font-semibold">CONCEPTION • FABRICATION • MONTAGE</p>
+                <a href="#contact" class="btn btn-accent mt-10">Parler de votre projet</a>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="galerie" class="py-24 lg:py-32 bg-paper">
+            <div class="max-w-7xl mx-auto px-5">
+                <h2 class="text-5xl lg:text-7xl font-bold">Le métal en détail</h2>
+                <p class="mt-4 text-neutral-600 max-w-xl">Assemblages, poutres, soudures, chantier et vues générales.
+                </p>
+                <div id="gallery-masonry" class="masonry mt-10"></div>
+            </div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-5">
+                <h2 class="text-5xl lg:text-7xl font-bold max-w-3xl">Pourquoi GAROU SERVICES</h2>
+                <div class="mt-14 grid md:grid-cols-3 gap-12">
+                    <div class="reveal"><i class="ri-focus-3-line text-brand text-4xl" aria-hidden="true"></i>
+                        <h3 class="text-3xl font-bold mt-4">Une approche adaptée au projet</h3>
+                        <p class="mt-3 text-neutral-700">Chaque projet est étudié en fonction des besoins spécifiques du
+                            client.</p>
+                    </div>
+                    <div class="reveal"><i class="ri-stack-line text-brand text-4xl" aria-hidden="true"></i>
+                        <h3 class="text-3xl font-bold mt-4">De la conception au montage</h3>
+                        <p class="mt-3 text-neutral-700">Une approche couvrant différentes étapes du projet métallique.
+                        </p>
+                    </div>
+                    <div class="reveal"><i class="ri-map-pin-2-line text-brand text-4xl" aria-hidden="true"></i>
+                        <h3 class="text-3xl font-bold mt-4">Des solutions adaptées au contexte</h3>
+                        <p class="mt-3 text-neutral-700">Des structures pensées selon les caractéristiques du projet et
+                            du chantier.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="on-dark bg-[#1F3B68] text-white py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-6xl lg:text-8xl font-bold">Parlons de votre projet.</h2>
+                    <p class="mt-6 text-white/75 max-w-md">Vous avez un projet de construction métallique ?
+                        Contactez-nous pour échanger sur vos besoins et obtenir davantage d'informations.</p>
+                    <ul class="mt-10 space-y-5">
+                        <li class="flex gap-4"><i class="ri-phone-line text-brand text-2xl" aria-hidden="true"></i>
+                            <div><span class="block text-xs uppercase tracking-widest text-white/50">Téléphone</span><a
+                                    id="contact-phone" class="hover:text-brand"></a></div>
+                        </li>
+                        <li class="flex gap-4"><i class="ri-whatsapp-line text-brand text-2xl" aria-hidden="true"></i>
+                            <div><span class="block text-xs uppercase tracking-widest text-white/50">WhatsApp</span><a
+                                    id="contact-whatsapp" class="hover:text-brand" target="_blank" rel="noopener"></a>
+                            </div>
+                        </li>
+                        <li class="flex gap-4"><i class="ri-mail-line text-brand text-2xl" aria-hidden="true"></i>
+                            <div><span class="block text-xs uppercase tracking-widest text-white/50">E-mail</span><a
+                                    id="contact-email" class="hover:text-brand break-all"></a></div>
+                        </li>
+                        <li class="flex gap-4"><i class="ri-map-pin-2-line text-brand text-2xl" aria-hidden="true"></i>
+                            <div><span
+                                    class="block text-xs uppercase tracking-widest text-white/50">Localisation</span><span
+                                    id="contact-address"></span></div>
+                        </li>
+                    </ul>
+                </div>
+                <form id="quote-form" novalidate class="space-y-5" aria-label="Demande de devis">
+                    <div><label for="form-name" class="text-sm">Nom complet *</label><input id="form-name"
+                            class="field mt-1" autocomplete="name">
+                        <p class="field-error text-red-400 text-sm mt-1" role="alert"></p>
+                    </div>
+                    <div><label for="form-phone" class="text-sm">Téléphone *</label><input id="form-phone" type="tel"
+                            class="field mt-1" autocomplete="tel" placeholder="+227 ...">
+                        <p class="field-error text-red-400 text-sm mt-1" role="alert"></p>
+                    </div>
+                    <div><label for="form-type" class="text-sm">Type de projet *</label><select id="form-type"
+                            class="field mt-1">
+                            <option value="">Choisir…</option>
+                            <option>Hangar</option>
+                            <option>Entrepôt</option>
+                            <option>Charpente métallique</option>
+                            <option>Structure métallique</option>
+                            <option>Autre</option>
+                        </select>
+                        <p class="field-error text-red-400 text-sm mt-1" role="alert"></p>
+                    </div>
+                    <div><label for="form-location" class="text-sm">Localisation du projet</label><input
+                            id="form-location" class="field mt-1"></div>
+                    <div><label for="form-message" class="text-sm">Description du besoin *</label><textarea
+                            id="form-message" rows="4" class="field mt-1"></textarea>
+                        <p class="field-error text-red-400 text-sm mt-1" role="alert"></p>
+                    </div>
+                    <button class="btn btn-accent w-full justify-center" type="submit"><i
+                            class="ri-send-plane-line  text-base" aria-hidden="true"></i>Envoyer via WhatsApp</button>
+                    <p id="form-success" class="text-green-400 hidden" role="status">Merci ! WhatsApp s'ouvre avec votre
+                        message, il ne reste qu'à l'envoyer.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="on-dark bg-black text-white/70 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+            <div>
+                <p class="font-display text-2xl text-white font-bold">GAROU SERVICES</p>
+                <p class="text-brand text-xs tracking-[.25em] uppercase">Structure Métallique</p>
+                <p class="mt-4">Conception, fabrication et montage de structures métalliques à Niamey.</p>
+            </div>
+            <div>
+                <h3 class="text-white text-lg mb-3">Navigation</h3>
+                <ul class="space-y-2">
+                    <li><a href="#accueil" class="hover:text-brand">Accueil</a></li>
+                    <li><a href="#apropos" class="hover:text-brand">À propos</a></li>
+                    <li><a href="#services" class="hover:text-brand">Services</a></li>
+                    <li><a href="#realisations" class="hover:text-brand">Réalisations</a></li>
+                    <li><a href="#contact" class="hover:text-brand">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-lg mb-3">Services</h3>
+                <ul class="space-y-2">
+                    <li>Conception</li>
+                    <li>Fabrication</li>
+                    <li>Montage</li>
+                    <li>Hangars &amp; entrepôts</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-lg mb-3">Contact</h3>
+                <ul class="space-y-2">
+                    <li id="footer-address"></li>
+                    <li id="footer-phone"></li>
+                    <li id="footer-whatsapp"></li>
+                </ul>
+            </div>
+        </div>
+        <p class="max-w-7xl mx-auto px-5 mt-12 pt-6 border-t border-white/10 text-xs">© <span id="year"></span> GAROU
+            SERVICES STRUCTURE MÉTALLIQUE. Tous droits réservés.</p>
+    </footer>
+
+    <!-- GALLERY MODAL -->
+    <div id="modal" class="on-dark fixed inset-0 z-[70] bg-black/95 hidden items-center justify-center p-4"
+        role="dialog" aria-modal="true" aria-label="Galerie plein écran">
+        <button id="modal-close" class="absolute top-4 right-4 text-white p-3" aria-label="Fermer"><i
+                class="ri-close-line  text-3xl" aria-hidden="true"></i></button>
+        <button id="modal-prev" class="absolute left-2 sm:left-6 top-1/2 text-white p-3 bg-black/40"
+            aria-label="Média précédent"><i class="ri-arrow-left-s-line  text-3xl" aria-hidden="true"></i></button>
+        <button id="modal-next" class="absolute right-2 sm:right-6 top-1/2 text-white p-3 bg-black/40"
+            aria-label="Média suivant"><i class="ri-arrow-right-s-line  text-3xl" aria-hidden="true"></i></button>
+        <figure class="max-w-5xl w-full text-white">
+            <img id="modal-image" alt="" class="w-full max-h-[70vh] object-contain">
+            <video id="modal-video" class="hidden w-full max-h-[70vh] bg-black" controls playsinline
+                preload="metadata"></video>
+            <figcaption class="mt-4 flex justify-between gap-4 items-end">
+                <div>
+                    <p id="modal-category" class="text-brand text-sm tracking-widest uppercase"></p>
+                    <h3 id="modal-title" class="text-3xl font-bold"></h3>
+                    <p id="modal-description" class="text-white/70"></p>
+                </div>
+                <p id="modal-counter" class="font-display text-2xl"></p>
+            </figcaption>
+            <div id="modal-thumbs" class="mt-4 flex gap-2 overflow-x-auto pb-1" aria-label="Miniatures"></div>
+        </figure>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button id="back-to-top"
+        class="fixed bottom-24 right-5 z-40 w-11 h-11 bg-graphite text-white hidden items-center justify-center hover:bg-brand hover:text-white"
+        aria-label="Retour en haut"><i class="ri-arrow-up-line  text-2xl" aria-hidden="true"></i></button>
+    <!-- WHATSAPP -->
+    <a id="whatsapp-button" target="_blank" rel="noopener"
+        class="fixed bottom-5 right-5 z-40 bg-[#25D366] text-ink font-semibold flex items-center gap-2 p-3.5 sm:px-5 shadow-lg"
+        aria-label="Discuter sur WhatsApp"><i class="ri-whatsapp-line  text-2xl" aria-hidden="true"></i><span
+            class="hidden sm:inline">WhatsApp</span></a>
+
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+
+</html>

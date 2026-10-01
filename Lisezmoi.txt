@@ -1,0 +1,38 @@
+DOSSIER DES IMAGES - GAROU SERVICES
+====================================
+
+Toutes les images se déclarent dans data.js. Ce dossier sert à les ranger.
+Si une photo est absente, un cadre gris "Photo à venir" s'affiche et le chemin
+manquant est signalé dans la console du navigateur (touche F12).
+
+images/
+  logo.jpeg  hero.jpg  aboutOverlay.jpeg  about1.jpeg  terrain.jpeg
+      -> images fixes de la page (objet IMAGES dans data.js)
+
+  services/       conception.jpg  fabrication.jpg  montage.jpg  hangars.jpg
+  galerie/        detail-1.jpg ... detail-6.jpg   (section "Le métal en détail")
+
+  realisations/   un DOSSIER PAR RÉALISATION, avec toutes ses photos :
+      hangar-1/     1.jpg  2.jpg  3.jpg ...
+      entrepot-1/   1.jpg  2.jpg  3.jpg ...
+      (etc.)
+
+videos/           les vidéos (MP4) : videos/hangar-1.mp4 ...
+
+AJOUTER DES PHOTOS ET VIDÉOS À UNE RÉALISATION
+  1. Copiez les fichiers dans images/realisations/<nom>/ et videos/
+  2. Dans data.js, dans le bloc de la réalisation :
+
+       images: [
+           "images/realisations/hangar-1/1.jpg",
+           "images/realisations/hangar-1/2.jpg"     <- une ligne par photo
+       ],
+       videos: ["videos/hangar-1.mp4"],             <- facultatif
+
+  La 1re photo sert de vignette. Au clic, photos puis vidéos s'ouvrent dans la
+  galerie plein écran (flèches, miniatures, compteur).
+
+CONSEILS
+- Photos : moins de 300 Ko chacune (squoosh.app pour compresser).
+- Vidéos : MP4 (H.264), 720p suffit. Pour de longues vidéos, préférez YouTube.
+- Un autre format (.jpeg, .png, .webp) ? Changez simplement l'extension dans data.js.

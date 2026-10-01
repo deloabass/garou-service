@@ -1,0 +1,288 @@
+/*
+  GAROU SERVICES - feuille de style
+  Tailwind gère l'essentiel de la mise en page directement dans le HTML.
+  Ici, on garde uniquement ce que les classes utilitaires ne couvrent pas.
+*/
+
+:root {
+    --brand: #1f3b68;
+    --brand-light: #4f7fcb;
+    --accent: #3a6bc4;
+    /* bleu vif : reste visible sur fond noir comme sur fond bleu marine */
+    --sky: #8fb1e8;
+    --ink: #171717;
+}
+
+/* ---------- Base ---------- */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+    /* évite que le header masque les titres */
+}
+
+body {
+    font-family: "Barlow", system-ui, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+    font-family: "Barlow Condensed", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+}
+
+:focus-visible {
+    outline: 3px solid var(--brand-light);
+    outline-offset: 3px;
+}
+
+/* Sur fond sombre, le bleu de la marque est trop foncé : on passe au bleu clair */
+.on-dark .text-brand,
+.on-dark .hover\:text-brand:hover {
+    color: var(--sky);
+}
+
+.on-dark .border-brand {
+    border-color: var(--sky);
+}
+
+/* ---------- Titres ---------- */
+/* Le sélecteur [class] rend ces règles prioritaires sur les tailles Tailwind du HTML */
+
+h1[class] {
+    font-size: clamp(2.5rem, 6.5vw, 5.25rem);
+}
+
+h2[class] {
+    font-size: clamp(2.1rem, 4.6vw, 3.75rem);
+}
+
+h3[class] {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+}
+
+#services-list h3[class] {
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+}
+
+footer h3[class] {
+    font-size: 1.125rem;
+}
+
+/* ---------- Header ---------- */
+
+#site-header {
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+#site-header.is-solid {
+    background: rgba(23, 23, 23, 0.88);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: var(--sky);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+    transform: scaleX(1);
+}
+
+.nav-link.is-active {
+    color: var(--sky);
+}
+
+/* Menu mobile : glisse depuis le haut */
+#menu {
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.45s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+#menu.is-open {
+    visibility: visible;
+    transform: none;
+}
+
+/* ---------- Boutons ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.7rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.btn-primary {
+    background: var(--brand);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--ink);
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-accent:hover {
+    background: #fff;
+    color: var(--brand);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    border-color: #fff;
+    color: var(--brand);
+}
+
+/* ---------- Images ---------- */
+
+.img-zoom img {
+    transition: transform 0.8s ease;
+}
+
+.img-zoom:hover img {
+    transform: scale(1.06);
+}
+
+/* ---------- Apparition au scroll ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Galerie des réalisations ---------- */
+
+.card {
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+.card.is-fading {
+    opacity: 0;
+    transform: scale(0.97);
+}
+
+.card.is-hidden {
+    display: none;
+}
+
+/* Mosaïque : les images ont des proportions différentes */
+.masonry {
+    columns: 2;
+    column-gap: 12px;
+}
+
+.masonry>* {
+    break-inside: avoid;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 1024px) {
+    .masonry {
+        columns: 3;
+        column-gap: 16px;
+    }
+
+    .masonry>* {
+        margin-bottom: 16px;
+    }
+}
+
+/* ---------- Formulaire ---------- */
+
+.field {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.field:focus {
+    outline: none;
+    border-color: var(--sky);
+}
+
+.field.has-error {
+    border-color: #ef4444;
+}
+
+/* ---------- Accessibilité ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ---------- Miniatures de la galerie plein écran ---------- */
+
+.thumb {
+    flex-shrink: 0;
+    width: 4.5rem;
+    height: 3.25rem;
+    overflow: hidden;
+    border: 2px solid transparent;
+    color: #fff;
+    opacity: 0.55;
+    transition: opacity 0.2s, border-color 0.2s;
+}
+
+.thumb:hover {
+    opacity: 0.9;
+}
+
+.thumb.is-active {
+    opacity: 1;
+    border-color: var(--sky);
+}
